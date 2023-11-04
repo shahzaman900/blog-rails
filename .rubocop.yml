@@ -21,6 +21,8 @@ Metrics/BlockLength:
   IgnoredMethods: ['describe']
   Max: 30
 
+Style/StringLiterals:
+  Enabled: true
 
 Style/Documentation:
   Enabled: false
