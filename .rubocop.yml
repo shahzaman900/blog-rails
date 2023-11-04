@@ -6,9 +6,11 @@ AllCops:
     - "node_modules/**/*"
 
   DisplayCopNames: true
+  TargetRubyVersion: 2.7
+  NewLine: \r\n
 
 Layout/LineLength:
-  Max: 120
+  Max: 300
 Metrics/MethodLength:
   Max: 20
 Metrics/AbcSize:
@@ -37,6 +39,8 @@ Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
   AllowForAlignment: false
+Layout/EndOfLine:
+  Enabled: false
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
