@@ -1,0 +1,28 @@
+<div id="user-posts-container">
+    <div class="user">
+        <img class="user-img" src="<%= @user.photo %>" alt="User photo">
+        <div class="name-posts-count">
+            <h2 class="user-name"><%= link_to @user.name, user_path(@user) %></h2>
+
+            <div class="user-posts-count"><p>Number of posts: <%= @user.post_counter %></p></div>
+        </div>
+      </div>
+    <div id="user-bio">
+        <h3>Bio</h3>
+        <p id="bio"><%= @user.bio %></p>
+    </div>
+    <% if @user.post_counter.zero? %>
+        <div class='user-data-block'>No posts were added by the User yet!</div>
+        <% if (current_user.id == @user.id) && (can? :create, Post) %>
+          <h2 class="add-post"><%= link_to 'Add new Post', new_user_post_path(@user) %></h2>
+        <% end %>
+    <% else %>
+        <div id="user-recent-posts">
+            <% @user.most_recent_posts.each_with_index do |post, i| %>
+                <%= render partial: "posts/post_data", locals: { post: post, i: i + 1 } %>
+            <% end %>
+        </div>
+
+        <div id="all-posts"><a href="<%= user_posts_path(@user) %>">See all posts</a></div>
+    <% end %>
+</div>
