@@ -1,0 +1,16 @@
+<h2>Add a new Post please.<h2>
+
+<% flash.each do |name, message| -%>
+    <div class="<%= name %>-flash">
+      <%= message %>
+    </div>
+<% end -%>
+<%= form_with model: [:user, @post], local: true, class: 'post-form' do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+      <%= form.label :text %>
+      <%= form.text_area :text %>
+      <%= form.submit "Add new Post" %>
+    </div>
+<% end %>

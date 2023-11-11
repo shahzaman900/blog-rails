@@ -1,0 +1,16 @@
+<h2>Add new Comment please!</h2>
+
+<% flash.each do |name, message| -%>
+    <div class="<%= name %>-flash">
+      <%= message %>
+    </div>
+<% end -%>
+<%= form_with model: [:user, :post, @comment], local: true, class: 'comment-form' do |form| %>
+    <div>
+      <%= form.label :text %>
+      <%= form.text_area :text %>
+      <%= form.hidden_field :user_id, value: params[:user_id] %>
+      <%= form.hidden_field :post_id, value: params[:post_id] %>
+      <%= form.submit "Add Comment please" %>
+    </div>
+<% end %>
