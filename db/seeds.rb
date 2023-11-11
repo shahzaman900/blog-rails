@@ -7,3 +7,28 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# user = User.create(
+#   name: 'Shah Zaman',
+#   photo: 'https://picsum.photos/200',
+#   bio: 'dbflaskjdbfasdbfalsdbfasdblf',
+#   post_counter: 10
+# )
+
+# 20.times do |i|
+#   User.create(
+#     name: "Shah Zaman #{i+1}",
+#   photo: 'https://picsum.photos/200',
+#   bio: 'dbflaskjdbfasdbfalsdbfasdblf',
+#   post_counter: 10
+#   )
+# end
+
+
+5.times do |i|
+  Post.create(
+    title: "Post #{i+1}",
+    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting',
+    comments_counter: 2,
+  )
+end

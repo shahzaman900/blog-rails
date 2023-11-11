@@ -1,0 +1,46 @@
+<div id="user-all-posts">
+    <div class="user">
+        <img class="user-img" src="<%= @user.photo %>" alt="User photo">
+        <div class="name-posts-count">
+            <h2 class="user-name"><%= link_to @user.name, user_path(@user) %></h2>
+
+            <div class="user-posts-count"><p>Number of posts: <%= @user.post_counter %></p></div>
+        </div>
+    </div>
+
+    <% flash.each do |name, message| -%>
+        <div class="<%= name %>-flash">
+          <%= message %>
+        </div>
+    <% end -%>
+
+    <% if (current_user.id == @user.id) && (can? :create, Post) %>
+      <h2 class="add-post"><%= link_to 'Add new Post', new_user_post_path %></h2>
+    <% end %>
+
+    <div id="posts-container">
+        <% @posts.each_with_index do |post, i| %>
+            <% five_recent_comments = post.five_recent_comments.includes(:user) %>
+            <div class="each-post-container">
+                <div id="each-post-info">
+                  <h3 id="post-title"><%= link_to "#{post.title} ##{i + 1}", user_post_path(@user, post) %></h3>
+                  <p id="post-text"><%= truncate(post.text, length: 100, omission: '.....') %></p>
+                  <div id="post-counts">
+                      <p id="count-text">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+                  </div>
+                </div>
+                <div id="post-comments">
+                    <% if five_recent_comments.empty? %>
+                        <p class="each-comment">No Comments found!</p>
+                    <% else %>
+                        <% five_recent_comments.each do |comment|%>
+                            <p class="each-comment">@<%= comment.user.name %>: <%= comment.text %></p>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+    <%= will_paginate %>
+</div>

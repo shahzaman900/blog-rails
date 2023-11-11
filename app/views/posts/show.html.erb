@@ -1,0 +1,51 @@
+<div class="post-container">
+    <div id="post-content">
+        <div id="name-counts">
+        <p id="each-post-name"><%= @post.title %> by <%= @post.author.name %></p>
+        <p id="each-post-c-l">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+        </div>
+        <p id="each-post-text"><%= @post.text %></p>
+    </div>
+
+    <div id="each-post-info">
+        <h3 id="post-title"><%= link_to "#{@post.title} ##{i}", user_post_path(@user, @post) %></h3>
+        <p id="post-text"><%= truncate(@post.text, length: 100, omission: '.....') %></p>
+        <div id="post-counts">
+            <p id="count-text">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+        </div>
+    </div>
+
+    <div id="comments-container">
+        <% if @post.comments.empty? %>
+            <p class="each-commnet">No comments yet!</p>
+        <% else %>
+            <% @post.comments.each do |comment| %>
+                <div class='comment-delete'>
+                 <p class="each-comment">@<%= comment.user.name %>: <%= comment.text %></p>
+
+                 <% if can? :destroy, comment %>
+                   <%= form_with(model: comment, url: user_post_comment_path(@post.author, @post, id: comment.id), method: :delete, id: 'delete-comment-form') do |form| %>
+                    <%= form.submit "Delete Comment", id: 'delete-comment-submit' %>
+                   <% end %>
+                 <% end %>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+
+    <% flash.each do |name, message| -%>
+        <div class="<%= name %>-flash">
+          <%= message %>
+        </div>
+    <% end -%>
+
+    <% if can? :create, Comment %>
+      <h2 class="add-comment"><%= link_to 'Comment on the Post!', new_user_post_comment_path(@post.author, @post) %><h2>
+    <% end %>
+
+    <% if can? :destroy, @post %>
+        <%= form_with(model: @post, url: user_post_path(@post.author, @post), method: :delete, id: 'delete-post-form') do |form| %>
+            <%= form.submit "Delete Post", id: 'delete-post-submit' %>
+        <% end %>
+    <% end %>
+</div>
