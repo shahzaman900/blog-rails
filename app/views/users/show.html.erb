@@ -1,26 +1,26 @@
-<div class='user_div'>
-  <div class='user_photo'>
-     <img class="user-img" src="<%= @user.photo %>" alt="User photo">
+<div class='user'>
+  <div class='user'>
+     <img class="user-img" src="<%= @user.photo %>" alt="User image">
   </div>
-  <div class='user_info'>
-    <p class='user_name'><%= @user.name %></p>
-    <p class='number_of_posts'>Number of posts: <%= @user.post_counter %></p>
+  <div class='info'>
+    <p class='name'><%= @user.name %></p>
+    <p class='posts'>Number of posts: <%= @user.post_counter %></p>
   </div>
 </div>
 
-<div class='user_bio'>
-  <%= @user.bio %>
+<div class='bio'>
+  <h6><%= @user.bio %></h6>
 </div>
 
 <div class='posts'>
   <% @user.most_recent_posts.each do |post| %>
-    <div class='individual_post'>
-      <h3><%= post.title %></h3>
-      <p>
+    <div class='individual-post'>
+      <h2><%= post.title %></h2>
+      <h6>
         <%= truncate(post.text, length: 130, omission: '...') %>
         <% if post.text.length > 20 %>
         <% end %>
-      </p>
+      </h6>
       <div class='comments'>
         <p class='number_of_comments'>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %></p>
       </div>

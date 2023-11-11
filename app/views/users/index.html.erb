@@ -1,10 +1,10 @@
-<div id="users-container">
+<div id="users">
     <% @users.each do |user| %>
       <div class="user">
-        <img class="user-img" src="<%= user.photo %>" alt="User photo">
-        <div class="name-posts-count">
-            <h2 class="user-name"><%= link_to user.name, user_path(user) %></h2>
-            <div class="user-posts-count"><p>Number of posts: <%= user.post_counter %></p></div>
+        <img class="user-img" src="<%= user.photo %>" alt="images loading from internet">
+        <div class="name section">
+            <h3 class="user-name"><%= link_to user.name, user_path(user) %></h3>
+            <div class="user-posts-count"><h6>Number of posts: <%= user.post_counter %></h6></div>
         </div>
       </div>
     <% end %>
