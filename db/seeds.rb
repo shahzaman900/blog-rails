@@ -25,10 +25,10 @@
 # end
 
 
-5.times do |i|
-  Post.create(
-    title: "Post #{i+1}",
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting',
-    comments_counter: 2,
-  )
-end
+# 5.times do |i|
+#   Post.create(
+#     title: "Post #{i+1}",
+#     text: 'Lorem Ipsum is simply dummy text of the printing and typesetting',
+#     comments_counter: 2,
+#   )
+# end
