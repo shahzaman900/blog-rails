@@ -75,10 +75,11 @@ Before running this project, make sure you have the following prerequisites inst
 ## 👥 Authors <a name="authors"></a>
 👤 Shah Zaman
 
-LinkedIn: Shah Zaman<br>
+LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahzaman900/).
 
 👤 Graciano Henrique
-Email:gracianomanuelhenrique@gmail.com
+
+Email:[Email](gracianomanuelhenrique@gmail.com).
 
 
 ## 🔭 Future Features <a name="future-features"></a>
