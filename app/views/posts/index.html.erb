@@ -14,9 +14,9 @@
         </div>
     <% end -%>
 
-    <% if (current_user.id == @user.id) && (can? :create, Post) %>
-      <h2 class="add-post"><%= link_to 'Add new Post', new_user_post_path %></h2>
-    <% end %>
+    <%# <% if (current_user.id == @user.id) && (can? :create, Post) %>
+      <%# <h2 class="add-post"><%= link_to 'Add new Post', new_user_post_path</h2>  %>
+    <%# <% end %>
 
     <div id="posts-container">
         <% @posts.each_with_index do |post, i| %>
@@ -42,5 +42,5 @@
         <% end %>
     </div>
 
-    <%= will_paginate %>
+    <%# <%= will_paginate %>
 </div>
