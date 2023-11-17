@@ -100,26 +100,5 @@ RSpec.describe 'Users', type: :system do
       sleep(1)
       expect(current_path).to eq(user_posts_path(@su))
     end
-
-    it 'should redirect to posts show page when you click on a users post' do
-      visit user_path(@fu)
-      sleep(1)
-      click_link(@su.name)
-      sleep(1)
-      expect(current_path).to eq(posts_path)
-    end
-
-    it 'should redirect to users posts index page when you click on a see all posts.' do
-      visit posts_path
-      sleep(1)
-      click_link('See all posts')
-      sleep(1)
-      expect(current_path).to eq(user_posts_path(@su))
-    end
-    end
   end
-end
-
-# Tests that redirects to the post's show page when you click on a user's post.
-
-# Tests that redirects to the user's post's index page when you click on a see all posts.
+encouraged

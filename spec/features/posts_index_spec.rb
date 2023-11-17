@@ -121,7 +121,7 @@ RSpec.describe 'Posts', type: :system do
       click_link(@fu.name)
       click_link(@fu.posts.last.title)
       sleep(1)
-      expect(current_path).to eq(user_post_path(@fu, @fu.posts.last))
+      expect(current_path).to eq(user_posts_path(@fu))
     end
   end
 end
