@@ -77,6 +77,9 @@ Before running this project, make sure you have the following prerequisites inst
 
 LinkedIn: Shah Zaman<br>
 
+👤 Graciano Henrique
+Email:gracianomanuelhenrique@gmail.com
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 
