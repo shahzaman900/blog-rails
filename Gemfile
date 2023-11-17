@@ -76,7 +76,25 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+end
+
+# group :development, :test do
+#   gem 'rspec-rails'
+# end
+
+# In your Gemfile
+gem 'factory_bot_rails', group: [:development, :test]
+
+# Then run:
+# bundle install
+
+group :development, :test do
+  # The RSpec testing framework
+  gem 'rspec-rails'
+
+  # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdriver'
