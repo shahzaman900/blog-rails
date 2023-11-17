@@ -8,12 +8,6 @@
         </div>
     </div>
 
-    <% flash.each do |name, message| -%>
-        <div class="<%= name %>-flash">
-          <%= message %>
-        </div>
-    <% end -%>
-
     <%# <% if (current_user.id == @user.id) && (can? :create, Post) %>
       <%# <h2 class="add-post"><%= link_to 'Add new Post', new_user_post_path</h2>  %>
     <%# <% end %>
