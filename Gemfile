@@ -31,7 +31,6 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-# In your Gemfile
 gem 'factory_bot_rails', group: [:development, :test]
 
 # Then run:
