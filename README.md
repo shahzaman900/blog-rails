@@ -76,10 +76,12 @@ Before running this project, make sure you have the following prerequisites inst
 👤 Shah Zaman
 
 LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahzaman900/).
+Github: [Github](https://github.com/sheezu900).
 
 👤 Graciano Henrique
 
 Email:[Email](gracianomanuelhenrique@gmail.com).
+Github: [Github](https://github.com/Graciano1997).
 
 
 ## 🔭 Future Features <a name="future-features"></a>
