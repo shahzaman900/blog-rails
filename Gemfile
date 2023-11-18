@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rails', '~> 7.1.1'
-gem 'devise'
 gem 'cancancan'
 gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
@@ -40,3 +39,4 @@ gem 'factory_bot_rails', group: [:development, :test]
 
 # group :development, :test do
 # end
+gem 'devise'
