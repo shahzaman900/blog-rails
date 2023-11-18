@@ -101,4 +101,4 @@ RSpec.describe 'Users', type: :system do
       expect(current_path).to eq(user_posts_path(@su))
     end
   end
-encouraged
+end
