@@ -6,26 +6,25 @@ class PostsController < ApplicationController
     @posts = @user.posts.includes(:comments)
   end
 
-end
 
 
-    def new
-      @post = Post.new
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = @current_user.posts.new(post_params)
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post }
+      else
+        format.html { render :new }
     end
+  end
 
-    def create
-      @post = @current_user.posts.new(post_params)
-
-      respond_to do |format|
-        if @post.save
-          format.html { redirect_to @post }
-        else
-          format.html { render :new }
-        end
-      end
-    end
-
-    private
-    def post_params
+  private
+  def post_params
       params.require(:post).permit(:title, :text)
-    end
+  end
+end
