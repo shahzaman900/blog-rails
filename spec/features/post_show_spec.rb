@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :system do
+RSpec.describe 'Posts', type: :feature do
   before :all do
     Like.delete_all
     Comment.delete_all

@@ -1,7 +1,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'User', type: :feature do
+RSpec.describe 'User', type: :system do
   let(:user) { User.create(name: 'Rose', photo: 'https://unsplash.com/photos/F_-0000BxGuVvo', bio: 'Teacher from India.') }
   let(:post) { Post.create(author: user, title: 'Hey', text: 'This is my post') }
 

@@ -75,7 +75,14 @@ Before running this project, make sure you have the following prerequisites inst
 ## 👥 Authors <a name="authors"></a>
 👤 Shah Zaman
 
-LinkedIn: Shah Zaman<br>
+LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahzaman900/).
+</br>
+Github: [Github](https://github.com/sheezu900).
+
+👤 Graciano Henrique
+
+Email:[Email](gracianomanuelhenrique@gmail.com).</br>
+Github: [Github](https://github.com/Graciano1997).
 
 
 ## 🔭 Future Features <a name="future-features"></a>
